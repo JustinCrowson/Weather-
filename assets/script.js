@@ -34,10 +34,10 @@ function onError(error){
 function fetchData(){
     infoTxt.innerText = "Getting weather details...";
     infoTxt.classList.add("pending");
-    {
+    fetch(api).then(res => res.json()).then(result => weatherDetails(result)).catch(() =>{
         infoTxt.innerText = "Something went wrong";
         infoTxt.classList.replace("pending", "error");
-    };
+    });
 }
 function weatherDetails(info){
     if(info.cod == "404"){
