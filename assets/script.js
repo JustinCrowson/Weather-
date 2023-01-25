@@ -24,7 +24,6 @@ function requestApi(city){
     fetchData();
 }
 function onSuccess(position){
-    const {latitude, longitude} = position.coords;
     api = `api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`;
     fetchData();
 }
