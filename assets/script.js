@@ -12,13 +12,13 @@ inputField.addEventListener("keyup", e =>{
         requestApi(inputField.value);
     }
 });
-locationBtn.addEventListener("click", () =>{
+{
     if(navigator.geolocation){
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     }else{
         alert("Your browser not support geolocation api");
     }
-});
+};
 function requestApi(city){
     api = `api.openweathermap.org/data/2.5/weather?q={city name}&appid={API key}`;
     fetchData();
